@@ -1,546 +1,548 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CV - Florentin-Marian Ion</title>
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<title>Florentin-Marian Ion — Full Stack PHP Developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <style>
-    body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.6;
-  background: #eef2f7;
-  margin: 0;
-  padding: 30px 15px;
-  color: #1f2937;
-}
+  :root {
+    --ink: #111417;
+    --ink-2: #3d4249;
+    --ink-3: #6b7280;
+    --rule: #e2e5ea;
+    --accent: #1d4ed8;
+    --accent-light: #eff4ff;
+    --bg: #f8f9fb;
+    --white: #ffffff;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+    --mono: 'DM Mono', 'Courier New', monospace;
+  }
 
-/* MAIN CONTAINER */
-.container {
-  max-width: 920px;
-  margin: auto;
-  background: #fff;
-  padding: 30px 32px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* HEADER */
-.header {
-  text-align: center;
-  border-bottom: 1px solid #e5e7eb;
-  padding-bottom: 15px;
-  margin-bottom: 20px;
-}
+  @media print {
+    body { background: white !important; padding: 0 !important; }
+    .page { box-shadow: none !important; border-radius: 0 !important; max-width: 100% !important; }
+  }
 
-.header h1 {
-  /* font-family: "Electrolize", sans-serif; */
-  font-size: 26px;
-  margin-bottom: 5px;
-  font-weight: 700;
-}
+  body {
+    font-family: var(--sans);
+    font-size: 13.5px;
+    line-height: 1.65;
+    background: var(--bg);
+    color: var(--ink);
+    padding: 32px 16px 64px;
+  }
 
-.subtitle {
-  color: #6b7280;
-  margin-bottom: 10px;
-}
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: 4px;
+    box-shadow: 0 2px 40px rgba(0,0,0,0.07), 0 0 0 1px rgba(0,0,0,0.04);
+    overflow: hidden;
+  }
 
-.contact-info {
-  font-size: 13px;
-}
+  /* ─── HERO ─── */
+  .hero {
+    /* padding: 44px 52px 36px; */
+    padding: 20px 52px 20px;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+    align-items: start;
+  }
 
-.contact-info a {
-  margin: 0 8px;
-  color: #2563eb;
-  text-decoration: none;
-}
+  .hero-name {
+    font-family: var(--serif);
+    font-size: 38px;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    color: var(--ink);
+  }
 
-/* SECTION TITLE */
-.section-title  {
-  margin-top: 15px;
-  font-size: 13px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding-left: 8px;
-  color: #1e3a8a;
-  font-weight: 600;
-  text-align: center;
-}
+  .hero-title {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 8px;
+    font-family: var(--mono);
+  }
 
-.section-title:not(.a)::after {
-   content: '';
-   display: inherit;
-   width: 30%;
-   margin: 0 auto;
-  border-top: 2px;
-  border-top-color: #2563eb;
-   border-top-style:inset;
-}
-/* PROFILE GRID */
-.profile {
-  display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 20px;
-  align-items: center;
-  margin-top: 15px;
-}
+  .hero-sub {
+    margin-top: 6px;
+    color: var(--ink-3);
+    font-size: 13px;
+    font-weight: 300;
+  }
 
-.profile img {
-  width: 140px;
-  border-radius: 20px;
-}
+  .hero-meta {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    font-size: 12.5px;
+    color: var(--ink-2);
+  }
 
+  .hero-meta a {
+    color: var(--ink-2);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color .15s;
+  }
 
-/* STRENGTHS */
-.strengths {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-top: 10px;
-}
+  .hero-meta a:hover { color: var(--accent); }
 
-.card {
-  border: 1px solid #e5e7eb;
-  border-left: 4px solid #2563eb;
-  padding: 10px 12px;
-  border-radius: 8px;
-  background: #fafafa;
-}
+  .hero-meta i {
+    color: var(--accent);
+    font-size: 11px;
+    width: 14px;
+    text-align: center;
+  }
 
-.card strong {
-  display: block;
-  font-size: 13px;
-}
+  .hero-right {
+    text-align: right;
+    padding-top: 4px;
+  }
 
-/* EXPERIENCE */
-.experience, .education-section, .languages-section {
-  margin-top: 14px;
-  padding: 14px;
-  border-radius: 10px;
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
-}
+  .location-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11.5px;
+    font-family: var(--mono);
+    color: var(--ink-3);
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    border-radius: 100px;
+    padding: 4px 12px;
+  }
 
-.experience .job-title {
-  font-weight: 600;
-}
+  /* ─── BODY LAYOUT ─── */
+  .body {
+    display: grid;
+    grid-template-columns: 1fr 240px;
+  }
 
-.experience .company {
-  color: #6b7280;
-  font-size: 16px;
-}
+  .main { padding: 36px 52px; border-right: 1px solid var(--rule); }
+  .aside { padding: 36px 28px; }
 
-.experience .dates {
-  font-size: 14px;
-  color: #9ca3af;
-}
+  /* ─── SECTION ─── */
+  .sec { margin-bottom: 32px; }
+  .sec:last-child { margin-bottom: 0; }
 
-.experience ul {
-  margin-top: 8px;
-  padding-left: 18px;
-}
+  .sec-label {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--rule);
+  }
 
-.experience li {
-  font-size: 13px;
-  margin-bottom: 5px;
-}
-.experience p {
-  font-size: 13px;
-}
+  /* ─── SUMMARY ─── */
+  .summary {
+    font-size: 13.5px;
+    font-weight: 300;
+    color: var(--ink-2);
+    line-height: 1.75;
+    text-align: justify;
+  }
 
-/* EDUCATION */
-.education, .languages {
-  margin-top: 10px;
-}
+  /* ─── EXPERIENCE ─── */
+  .job { margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--rule); }
+  .job:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
 
-.skills-wrap { padding: 1rem 0; font-family: var(--font-sans); }
-.skills-title { text-align: center; font-size: 13px; font-weight: 500; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 1.5rem; padding-bottom: 6px; border-bottom: 0.5px solid var(--color-border-tertiary); }
-.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.cat-label { font-size: 11px; font-weight: 500; color: var(--color-text-tertiary); text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 8px; }
-.badges { display: flex; flex-wrap: wrap; gap: 6px; }
-.badge { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 4px; }
-.badge i { font-size: 11px; }
-.b-back  { background: #E6F1FB; color: #0C447C; }
-.b-front { background: #EEEDFE; color: #3C3489; }
-.b-data  { background: #E1F5EE; color: #085041; }
-.b-devop { background: #FAEEDA; color: #633806; }
-.b-sys   { background: #F1EFE8; color: #444441; }
-.b-arch  { background: #FAECE7; color: #712B13; }
+  .job-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+
+  .job-title {
+    font-weight: 600;
+    font-size: 13.5px;
+    color: var(--ink);
+  }
+
+  .job-company {
+    font-size: 12.5px;
+    color: var(--ink-2);
+    margin-top: 2px;
+  }
+
+  .job-date {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-3);
+    white-space: nowrap;
+    padding-top: 2px;
+  }
+
+  .job-stack {
+    margin-top: 6px;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--accent);
+    line-height: 1.5;
+  }
+
+  .job-desc {
+    margin-top: 8px;
+    font-size: 12.5px;
+    color: var(--ink-3);
+    font-style: italic;
+    text-align: justify;
+  }
+
+  .job ul {
+    margin-top: 8px;
+    padding-left: 16px;
+  }
+
+  .job li {
+    font-size: 12.5px;
+    color: var(--ink-2);
+    margin-bottom: 4px;
+    line-height: 1.55;
+  }
+
+  .job li strong { color: var(--ink); font-weight: 500; }
+
+  /* ─── SKILLS (ASIDE) ─── */
+  .skill-group { margin-bottom: 20px; }
+  .skill-group:last-child { margin-bottom: 0; }
+
+  .skill-cat {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 8px;
+  }
+
+  .badges { display: flex; flex-wrap: wrap; gap: 5px; }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11.5px;
+    font-weight: 500;
+    padding: 3px 9px;
+    border-radius: 3px;
+    line-height: 1.4;
+  }
+
+  .badge i { font-size: 10px; }
+  .b-back  { background: #e8f0fd; color: #1d3f8a; }
+  .b-front { background: #eeedfb; color: #3c3489; }
+  .b-data  { background: #e0f5ec; color: #085041; }
+  .b-devop { background: #faeeda; color: #633806; }
+  .b-sys   { background: #f0eee8; color: #444441; }
+  .b-arch  { background: #faece7; color: #712b13; }
+
+  /* ─── ASIDE SECTIONS ─── */
+  .aside-sec { margin-bottom: 28px; }
+  .aside-sec:last-child { margin-bottom: 0; }
+
+  .aside-label {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .edu-school { font-weight: 600; font-size: 12.5px; }
+  .edu-degree { font-size: 12px; color: var(--ink-2); margin-top: 2px; }
+  .edu-dates  { font-family: var(--mono); font-size: 10.5px; color: var(--ink-3); margin-top: 2px; }
+
+  .lang-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12.5px;
+    padding: 5px 0;
+    border-bottom: 1px dashed var(--rule);
+    color: var(--ink-2);
+  }
+
+  .lang-item:last-child { border-bottom: none; }
+
+  .lang-level {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-3);
+  }
+
+  /* ─── ANIMATIONS ─── */
+  .hero, .sec, .aside-sec { animation: fadeUp .5s ease both; }
+  .sec:nth-child(2) { animation-delay: .05s; }
+  .sec:nth-child(3) { animation-delay: .1s; }
+  .aside-sec:nth-child(2) { animation-delay: .07s; }
+  .aside-sec:nth-child(3) { animation-delay: .12s; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 680px) {
+    .hero { grid-template-columns: 1fr; padding: 28px 24px 24px; }
+    .hero-right { display: none; }
+    .body { grid-template-columns: 1fr; }
+    .main { padding: 24px; border-right: none; border-bottom: 1px solid var(--rule); }
+    .aside { padding: 24px; }
+    .hero-name { font-size: 28px; }
+  }
 </style>
 </head>
+<body>
+<div class="page">
 
-<body class="container py-2">
-  <header class="header">
-    <h1>Florentin-Marian Ion</h1>
-    <h3>Full Stack PHP Developer | Laravel · Angular · JavaScript</h3>
-    <p class="subtitle">7+ years experience | Scalable Web Applications & SaaS Systems</p>
+  <!-- HERO -->
+  <header class="hero">
+    <div>
+      <div class="hero-name">Florentin-Marian Ion</div>
+      <div class="hero-title">Full Stack PHP Developer</div>
+      <div class="hero-sub">Laravel · JavaScript · Angular · TypeScript &nbsp;·&nbsp; 7+ years</div>
 
-    <div class="contact-info">
+      <div class="hero-meta">
         <a href="mailto:florentin.marian.ion@gmail.com">
-            <i class="fas fa-envelope"></i> FlorentinMarianIon@gmail.com
+          <i class="fas fa-envelope"></i> florentin.marian.ion@gmail.com
         </a>
         <a href="tel:+40766329974">
-          <i class="fas fa-phone s"></i> (+40) 766-329-974
-        </a><br>
-        <a href="https://www.linkedin.com/in/florentinmarianion">
-            <i class="fab fa-linkedin"></i> /in/FlorentinMarianIon
+          <i class="fas fa-phone"></i> (+40) 766-329-974
         </a>
-        <!-- <a href="https://github.com/florentinmarianion">
-            <i class="fab fa-github"></i> /florentinmarianion
-        </a> -->
-    </div>
-
-    <p class="mb-0">
-        <i class="fas fa-map-marker-alt"></i>
-        Romania (Remote within EU)
-    </p>
-</header>
-
-<section class="profile">
-  <img src="Profile.jpg" alt="Florentin Marian Ion"/>
-
-  <div>
-    <h2 class="section-title a">Professional Summary</h2>
-    
-    <p>
-      Full Stack PHP Developer with 7+ years of hands-on experience in Laravel, Symfony, Angular and TypeScript. I build and maintain SaaS platforms and web applications for clients in finance, insurance, healthcare, automation platforms and eCommerce, across both product teams and independent consulting engagements. I care about clean code, solid API design and databases that don't fall apart under load, and I work best in remote teams with a culture of trust and autonomy. Open to full-time remote roles in EU.
-    </p>
-  </div>
-</section>
-
-
-<!-- SKILLS (ZONE 2 - SCAN MATCH) -->
- <section class="skills-wrap">
-  <p class="skills-title">Technical skills</p>
-  <div class="skills-grid">
-    <div>
-      <p class="cat-label">Backend</p>
-      <div class="badges">
-        <span class="badge b-back"><i class="fab fa-php"></i> PHP</span>
-        <span class="badge b-back"><i class="fab fa-laravel"></i> Laravel</span>
-        <span class="badge b-back"><i class="fa-brands fa-symfony"></i> Symfony</span>
+        <a href="https://www.linkedin.com/in/florentinmarianion" target="_blank">
+          <i class="fab fa-linkedin"></i> /in/FlorentinMarianIon
+        </a>
+        <a href="https://github.com/florentinmarianion">
+            <i class="fab fa-github"></i> github.com/florentinmarianion
+        </a>
       </div>
     </div>
-    <div>
-      <p class="cat-label">Frontend</p>
-      <div class="badges">
-        <span class="badge b-front"><i class="fab fa-angular"></i> Angular</span>
-        <span class="badge b-front"><i class="fab fa-js"></i> TypeScript</span>
-        <span class="badge b-front"><i class="fab fa-vuejs"></i> Vue.js</span>
+    <div class="hero-right">
+      <span class="location-pill">
+        <i class="fas fa-map-marker-alt" style="color:var(--accent)"></i>
+        Romania · Remote EU
+      </span>
+    </div>
+  </header>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- MAIN COLUMN -->
+    <main class="main">
+
+      <!-- SUMMARY -->
+      <div class="sec">
+        <div class="sec-label">Professional Summary</div>
+        <p class="summary">
+          Full Stack PHP Developer with 7+ years of hands-on experience in Laravel, Symfony, Angular and TypeScript. I build and maintain SaaS platforms and web applications for clients in finance, insurance, healthcare, automation and eCommerce — across product teams and independent consulting engagements. I care about clean code, solid API design and databases that don't fall apart under load. I work best in remote teams with a culture of trust and autonomy. Open to full-time remote roles in EU.
+        </p>
       </div>
-    </div>
-    <div>
-      <p class="cat-label">Data & APIs</p>
-      <div class="badges">
-        <span class="badge b-data"><i class="fas fa-network-wired"></i> REST APIs</span>
-        <span class="badge b-data"><i class="fas fa-plug"></i> SOAP</span>
-        <span class="badge b-data"><i class="fas fa-database"></i> MySQL</span>
+
+      <!-- EXPERIENCE -->
+      <div class="sec">
+        <div class="sec-label">Professional Experience</div>
+
+        <!-- Freelancer -->
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <div class="job-title"><i class="fab fa-php" style="color:var(--accent)"></i> &nbsp;Full Stack PHP / Laravel Developer</div>
+              <div class="job-company"><i class="fas fa-laptop-code"></i>&nbsp; Freelancer — Selected Projects</div>
+              <div class="job-stack">PHP (Laravel, Symfony, CodeIgniter) · Angular · TypeScript · Vue.js · MySQL · PostgreSQL · Redis · AWS · Azure · Docker · CI/CD</div>
+            </div>
+            <div class="job-date">Aug 2018 – Present</div>
+          </div>
+          <div class="job-desc">Independent consultant and full stack developer working with clients across finance, insurance, healthcare, eCommerce, tech and public sector. 
+            I work autonomously, covering the full development lifecycle from requirements analysis and implementation to testing and post-release support, following OOP/MVC best practices throughout.</div>
+          <ul>
+            <li>Built and delivered SaaS platforms and web applications end-to-end using <strong>PHP (Laravel, Symfony), Angular, TypeScript and Javascript(Vue.js, jQuery)</strong>.</li>
+            <li>Designed and integrated <strong>REST APIs</strong> and modular backend systems connecting <strong>MySQL, PostgreSQL and NoSQL</strong> databases with external platforms: ERP, CRM, third-party APIs and cloud services.</li>
+            <li>Refactored and modernized legacy PHP applications (10+ years old), improving performance, security and long-term maintainability</li>
+            <li>Managed full project lifecycle independently, collaborating remotely with QA, DevOps and client teams in Agile environments</li>
+            <li>Configured and managed development and production environments: Docker, Linux, Apache, Nginx, DNS routing and virtual hosts, CI/CD pipelines, and cloud infrastructure (AWS, Azure).</li>
+          </ul>
+        </div>
+
+        <!-- EASA -->
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <div class="job-title"><i class="fab fa-php" style="color:var(--accent)"></i> &nbsp;Senior Full Stack PHP Developer (Consultant)</div>
+              <div class="job-company"><i class="fas fa-briefcase"></i>&nbsp; EASA – European Union Aviation Safety Agency · Cologne, DE (Remote)</div>
+              <div class="job-stack">PHP (Yii, Symfony) · Angular · MySQL · Oracle · REST · SOAP · Git · CI/CD</div>
+            </div>
+            <div class="job-date">Apr 2022 – May 2023</div>
+          </div>
+          <div class="job-desc">Consultant engineer at the European Union Aviation Safety Agency (EASA), working on enterprise-grade web applications for aviation regulatory processes. 
+    Remote engagement within a cross-functional international team.</div>
+          <ul>
+            <li>Developed and maintained frontend and backend components across a mixed technology stack: PHP (Yii, Symfony legacy), Angular, JavaScript, Ext.js, MySQL and Oracle</li>
+            <li>Migrated a legacy enterprise application from Silverlight to Angular, rebuilding core workflows and process tracking modules</li>
+            <li>Designed, implemented and integrated REST and SOAP APIs for communication between distributed systems</li>
+            <li>Optimized database interactions and performance using Oracle and MySQL</li>
+            <li>Implemented role-based access control and approval workflows for regulated processes</li>
+            <li>Managed deployments across DEV, QA, UAT and PRD environments via automated CI/CD pipelines</li>
+            <li>Identified and resolved production issues, improving system stability and user experience</li>
+            <li>Provided end-user support and handled production tickets within defined SLAs</li>
+          </ul>
+        </div>
+
+        <!-- OSF -->
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <div class="job-title"><i class="fab fa-php" style="color:var(--accent)"></i> &nbsp;Full Stack PHP Developer</div>
+              <div class="job-company"><i class="fas fa-briefcase"></i>&nbsp; OSF Global Services — Craiova</div>
+              <div class="job-stack">PHP (Slim) · Vue.js · jQuery · Bootstrap · REST APIs · Docker · Git</div>
+            </div>
+            <div class="job-date">Aug 2017 – May 2018</div>
+          </div>
+          <div class="job-desc">Full stack developer on financial web platforms and cloud accounting integrations in an international Agile team.</div>
+          <ul>
+            <li>Developed backend logic and integrations for Sage Intacct (cloud accounting platform) using PHP, CLI controllers and API connectors</li>
+            <li>Implemented VAT processing, accounts payable/receivable, general ledger and reporting workflows</li>
+            <li>Built frontend components using Vue.js and jQuery</li>
+            <li>Designed and integrated REST APIs and modular backend services using Slim Framework</li>
+            <li>Containerized applications with Docker</li>
+            <li>Implemented document management and secure file transfer solutions (FTP, versioning, access control)</li>
+          </ul>
+        </div>
+
+        <!-- Essential -->
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <div class="job-title"><i class="fab fa-php" style="color:var(--accent)"></i> &nbsp;Full Stack PHP Developer</div>
+              <div class="job-company"><i class="fas fa-briefcase"></i>&nbsp; Essential Technologies — Bucharest</div>
+              <div class="job-stack">PHP (Laravel, Symfony, CodeIgniter) · JavaScript · jQuery · MongoDB · Redis · MySQL · Linux · SVN</div>
+            </div>
+            <div class="job-date">Jul 2013 – Dec 2016</div>
+          </div>
+          <div class="job-desc">Full stack developer delivering end-to-end web applications across finance, insurance, eCommerce, retail and HoReCa. From backend architecture and database design to frontend and Linux deployment.</div>
+          <ul>
+            <li>Developed complex web applications using PHP, JavaScript and MongoDB, including authentication and access control mechanisms: ACL and SSO for enterprise and internal platforms</li>
+            <li>Built Single Page Applications (SPA) and dynamic interfaces using jQuery, AJAX and Bootstrap</li>
+            <li>Used MongoDB and Redis for data modeling, validation and processing in high-volume applications</li>
+            <li>Automated administrative modules including notifications, data validation, import/export, document management and REST API integration</li>
+            <li>Delivered end-to-end solutions covering backend, database design, frontend and deployment in Linux environments</li>
+          </ul>
+        </div>
+
+      </div><!-- /sec -->
+    </main><!-- /main -->
+
+    <!-- ASIDE COLUMN -->
+    <aside class="aside">
+
+      <!-- SKILLS -->
+      <div class="aside-sec">
+        <div class="aside-label">Technical Skills</div>
+
+        <div class="skill-group">
+          <div class="skill-cat">Backend</div>
+          <div class="badges">
+            <span class="badge b-back"><i class="fab fa-php"></i> PHP</span>
+            <span class="badge b-back"><i class="fab fa-laravel"></i> Laravel</span>
+            <span class="badge b-back"><i class="fa-brands fa-symfony"></i> Symfony</span>
+          </div>
+        </div>
+
+        <div class="skill-group" style="margin-top:14px">
+          <div class="skill-cat">Frontend</div>
+          <div class="badges">
+            <span class="badge b-front"><i class="fab fa-angular"></i> Angular</span>
+            <span class="badge b-front"><i class="fab fa-js"></i> TypeScript</span>
+            <span class="badge b-front"><i class="fab fa-vuejs"></i> Vue.js</span>
+          </div>
+        </div>
+
+        <div class="skill-group" style="margin-top:14px">
+          <div class="skill-cat">Data &amp; APIs</div>
+          <div class="badges">
+            <span class="badge b-data"><i class="fas fa-network-wired"></i> REST APIs</span>
+            <span class="badge b-data"><i class="fas fa-plug"></i> SOAP</span>
+            <span class="badge b-data"><i class="fas fa-database"></i> MySQL</span>
+            <span class="badge b-data"><i class="fas fa-database"></i> PostgreSQL</span>
+          </div>
+        </div>
+
+        <div class="skill-group" style="margin-top:14px">
+          <div class="skill-cat">DevOps &amp; Cloud</div>
+          <div class="badges">
+            <span class="badge b-devop"><i class="fas fa-infinity"></i> CI/CD</span>
+            <span class="badge b-devop"><i class="fab fa-aws"></i> AWS</span>
+            <span class="badge b-devop"><i class="fas fa-cloud"></i> Azure</span>
+            <span class="badge b-devop"><i class="fab fa-git"></i> Git</span>
+            <span class="badge b-devop"><i class="fab fa-docker"></i> Docker</span>
+          </div>
+        </div>
+
+        <div class="skill-group" style="margin-top:14px">
+          <div class="skill-cat">Systems &amp; Performance</div>
+          <div class="badges">
+            <span class="badge b-sys"><i class="fas fa-memory"></i> Redis</span>
+            <span class="badge b-sys"><i class="fas fa-gauge-high"></i> Scalable APIs</span>
+            <span class="badge b-sys"><i class="fas fa-magnifying-glass-chart"></i> Query Optimization</span>
+          </div>
+        </div>
+
+        <div class="skill-group" style="margin-top:14px">
+          <div class="skill-cat">Architecture</div>
+          <div class="badges">
+            <span class="badge b-arch"><i class="fas fa-layer-group"></i> MVC</span>
+            <span class="badge b-arch"><i class="fas fa-cubes"></i> OOP</span>
+            <span class="badge b-arch"><i class="fas fa-shield-halved"></i> SOLID</span>
+            <span class="badge b-arch"><i class="fas fa-diagram-project"></i> Design Patterns</span>
+          </div>
+        </div>
       </div>
-    </div>
-    <div>
-      <p class="cat-label">DevOps & Tools</p>
-      <div class="badges">
-        <span class="badge b-devop"><i class="fas fa-infinity"></i> CI/CD</span>
-        <span class="badge b-devop"><i class="fab fa-aws"></i> AWS</span>
-        <span class="badge b-devop"><i class="fas fa-cloud"></i> Azure</span>
-        <span class="badge b-devop"><i class="fab fa-git"></i> Git</span>
-      </div>
-    </div>
-    <div>
-      <p class="cat-label">Systems & Performance</p>
-      <div class="badges">
-        <span class="badge b-sys"><i class="fas fa-memory"></i> Caching (Redis)</span>
-        <span class="badge b-sys"><i class="fas fa-arrows-spin"></i> Async Processing</span>
-        <span class="badge b-sys"><i class="fas fa-magnifying-glass-chart"></i> Query Optimization</span>
-        <span class="badge b-sys"><i class="fas fa-gauge-high"></i> Scalable APIs</span>
-      </div>
-    </div>
-    <div>
-      <p class="cat-label">Architecture & Patterns</p>
-      <div class="badges">
-        <span class="badge b-arch"><i class="fas fa-layer-group"></i> MVC</span>
-        <span class="badge b-arch"><i class="fas fa-cubes"></i> OOP</span>
-        <span class="badge b-arch"><i class="fas fa-shield-halved"></i> SOLID</span>
-        <span class="badge b-arch"><i class="fas fa-diagram-project"></i> Design Patterns</span>
-      </div>
-    </div>
-  </div>
 
-</section>
-<!-- <section>
-    <h2 class="section-title">Competențe tehnice</h2>
-    <div class="skills mb-2">
-        <span><i class="fab fa-php"></i>PHP</span>
-        <span><i class="fab fa-laravel"></i>Laravel</span>
-        <span><i class="fa-brands fa-symfony"></i>Symfony</span>
-        <span><i class="fab fa-php"></i>Yii</span>
-        <span><i class="fab fa-angular"></i>Angular</span>
-        <span><i class="fab fa-js"></i>TypeScript</span>
-        <span><i class="fab fa-js"></i>JavaScript</span>
-        <span><i class="fas fa-network-wired"></i>REST Apis</span>
-        <span><i class="fas fa-plug"></i>SOAP</span>
-        <span><i class="fas fa-database"></i>MySQL</span>
-
-        <span class="secondary"><i class="fas fa-server"></i>CI/CD</span>
-        <span class="secondary"><i class="fab fa-aws"></i>AWS</span>
-        <span class="secondary"><i class="fas fa-cloud"></i>Azure</span>
-        <span class="secondary"><i class="fa-brands fa-git"></i>Git</span>
-        <span class="secondary"><i class="fas fa-terminal"></i>Linux</span>
-        <span class="secondary"><i class="fab fa-vuejs"></i>Vue.js</span>
-    </div>
-</section> -->
-
-<!-- KEY STRENGTHS (ZONE 3 - DECISION ZONE) -->
-<!-- <section>
-  <h2 class="section-title">Key Strengths</h2>
-
-  <div class="strengths">
-
-    <div class="card">
-      <strong>Full Stack SaaS Development</strong>
-      <span>Laravel & Angular applications</span>
-    </div>
-
-    <div class="card">
-      <strong>API Architecture</strong>
-      <span>REST & SOAP integrations</span>
-    </div>
-
-    <div class="card">
-      <strong>Database Engineering</strong>
-      <span>MySQL design & optimization</span>
-    </div>
-
-    <div class="card">
-      <strong>Enterprise Delivery</strong>
-      <span>Clean code & stable releases</span>
-    </div>
-
-    <div class="card">
-      <strong>Legacy Systems & Refactoring</strong>
-      <span>Refactoring & modernization</span>
-    </div>
-
-    <div class="card">
-      <strong>Team Collaboration</strong>
-      <span>Agile environment, remote cross-functional teams</span>
-    </div>
-
-    <div class="card">
-      <strong>Development Environment & Infrastructure Setup</strong>
-      <span>Configuring local and production-like environments (Docker, Linux, virtual hosts, DNS routing)</span>
-    </div>
-
-    <div class="card">
-      <strong>Development</strong>
-      <span>End-to-end delivery of features and applications, from setup and architecture to deployment and maintenance</span>
-    </div>
-  </div>
-</section>
-<br /> -->
-<!-- EXPERIENCE (ZONE 4 - MAIN IMPACT) -->
-<section>
-  <h2 class="section-title">Professional Experience</h2>
-
-
-<div class="experience">
-    <div class="d-flex justify-content-between">
+      <!-- EDUCATION -->
+      <div class="aside-sec">
+        <div class="aside-label">Education</div>
         <div>
-            <div class="job-title">
-                <i class="fab fa-php"></i>
-                Full Stack PHP/Laravel Developer
-            </div>
-            <div class="company"><i class="fas fa-laptop-code"></i> Freelancer – Selected Projects</div>
-            <div class="tech-stack">
-              <small><strong>Stack:</strong> PHP (Laravel, Symfony, CodeIgniter), JavaScript (Vue.js, jQuery), Angular, TypeScript, Node.js, MySQL, PostgreSQL, Redis, Apache, AWS, Azure, Git, CI/CD</small>
-            </div>
+          <div class="edu-school">Academy of Economic Studies</div>
+          <div class="edu-degree">Accounting &amp; Information Systems</div>
+          <div style="font-size:11px;color:var(--ink-3);margin-top:1px">Bucharest</div>
+          <div class="edu-dates">2009 – 2012 · EQF Level 6</div>
         </div>
-        <div class="dates">Aug 2018 – Present</div>
-    </div>
-
-    <p>
-      Independent consultant and full stack developer working with clients across finance, insurance, healthcare, eCommerce, tech and public sector. 
-      I work autonomously, covering the full development lifecycle from requirements analysis and implementation to testing and post-release support, following OOP/MVC best practices throughout.
-    </p>
-    <ul>
-        <li>Built and delivered SaaS platforms and web applications end-to-end using <strong>PHP (Laravel, Symfony), Angular, TypeScript and Javascript(Vue.js, jQuery)</strong>.</li>
-        <li>Designed and integrated <strong>REST APIs</strong> and modular backend systems connecting <strong>MySQL, PostgreSQL and NoSQL</strong> databases with external platforms: ERP, CRM, third-party APIs and cloud services.</li>
-        <li>Refactored and modernized legacy PHP applications (10+ years old), improving performance, security and long-term maintainability</li>
-        <li>Managed full project lifecycle independently, collaborating remotely with QA, DevOps and client teams in Agile environments</li>
-        <li>Configured and managed development and production environments: Docker, Linux, Apache, Nginx, DNS routing and virtual hosts, CI/CD pipelines, and cloud infrastructure (AWS, Azure).</li>
-    </ul>
-    
-    <!-- <ul>
-        <li>Developed Full Stack applications using <strong>Laravel, PHP, Angular, JavaScript, and Vue.js</strong> for clients in finance, insurance, eCommerce, public sector, healthcare, and services.</li>
-        <li>Designed and developed <strong>REST APIs</strong>, admin dashboards, billing modules, and integrations with external systems.</li>
-        <li>Built modular backend systems and API services integrating <strong>MySQL and PostgreSQL</strong> databases with external platforms (payments, ERP, CRM).</li>
-        <li>Implemented operational dashboards and reporting modules for decision support.</li>
-        <li>Managed the full development lifecycle: requirements analysis, implementation, testing, and post-release support, collaborating with QA and DevOps teams in Agile environments.</li>
-        <li>Worked remotely with full ownership.</li>
-        <li>Refactored and modernized legacy PHP applications to improve performance and maintainability.</li>
-    </ul> -->
-
-</div>
-
-<!-- EASA -->
-<div class="experience">
-  <div class="d-flex justify-content-between">
-    <div>
-      <div class="job-title">
-        <i class="fab fa-php"></i>
-        Senior Full Stack PHP Developer (Consultant)
       </div>
-      <div class="company">
-        <i class="fas fa-briefcase"></i> EASA – European Union Aviation Safety Agency
-      </div>
-      <div class="location">Cologne, Germany (Remote)</div>
 
-      <div class="tech-stack">
-        <small><strong>Stack:</strong> PHP (Yii, Symfony), Angular, MySQL, Oracle, REST, SOAP, Git, CI/CD</small>
-      </div>
-    </div>
-    <div class="dates">Apr 2022 – May 2023</div>
-  </div>
-
-  <span>Consultant engineer at the European Union Aviation Safety Agency (EASA), working on enterprise-grade web applications for aviation regulatory processes. 
-    Remote engagement within a cross-functional international team.</span>
-  <ul>
-    <li>Developed and maintained frontend and backend components across a mixed technology stack: PHP (Yii, Symfony legacy), Angular, JavaScript, Ext.js, MySQL and Oracle</li>
-    <li>Migrated a legacy enterprise application from Silverlight to Angular, rebuilding core workflows and process tracking modules</li>
-    <li>Designed, implemented and integrated REST and SOAP APIs for communication between distributed systems</li>
-    <li>Optimized database interactions and performance using Oracle and MySQL</li>
-    <li>Implemented role-based access control and approval workflows for regulated processes</li>
-    <li>Managed deployments across DEV, QA, UAT and PRD environments via automated CI/CD pipelines</li>
-    <li>Identified and resolved production issues, improving system stability and user experience</li>
-    <li>Provided end-user support and handled production tickets within defined SLAs</li>
-  </ul>
-
-
-  <!-- <ul>
-    <li>Worked in a mixed technology stack including <strong>PHP (Yii, Symfony legacy), Angular, MySQL and Oracle</strong>.</li>
-
-    <li>Rebuilt and enhanced a recruitment management system using <strong>Angular</strong>, covering candidate screening, interview workflows, and process tracking.</li>
-
-    <li>Designed, implemented, and integrated <strong>REST and SOAP APIs</strong> for communication between distributed systems.</li>
-
-    <li>Developed and maintained frontend components integrated with backend services built in <strong>PHP (Yii Framework)</strong>.</li>
-
-    <li>Optimized database interactions and performance using <strong>Oracle and MySQL</strong>.</li>
-
-    <li>Implemented role-based access control and approval workflows for regulated processes.</li>
-
-    <li>Identified and resolved production issues, improving system stability and user experience.</li>
-
-    <li>Collaborated with cross-functional teams (Dev, DevOps, stakeholders) in Agile environment.</li>
-
-    <li>Provided end-user support and handled production tickets within defined SLAs.</li>
-  </ul> -->
-</div>
-
-
-<!-- OSF -->
-<div class="experience">
-  <div class="d-flex justify-content-between">
-    <div>
-      <div class="job-title">
-        <i class="fab fa-php"></i>
-        Full Stack PHP Developer
-      </div>
-      <div class="company"><i class="fas fa-briefcase"></i>OSF Global Services – Craiova</div>
-
-      <div class="tech-stack">
-        <small><strong>Stack:</strong> PHP (Slim Framework), JavaScript (Vue.js, jQuery), Bootstrap, REST APIs, Git, Docker</small>
-      </div>
-    </div>
-    <div class="dates">Aug 2017 – May 2018</div>
-  </div>
-
-<span>Full stack developer on financial web platforms and cloud accounting integrations, working within an international Agile team.</span>
-<ul>
-  <li>Developed backend logic and integrations for Sage Intacct (cloud accounting platform) using PHP, CLI controllers and API connectors</li>
-  <li>Implemented VAT processing, accounts payable/receivable, general ledger and reporting workflows</li>
-  <li>Built frontend components using Vue.js and jQuery</li>
-  <li>Designed and integrated REST APIs and modular backend services using Slim Framework</li>
-  <li>Containerized applications with Docker</li>
-  <li>Implemented document management and secure file transfer solutions (FTP, versioning, access control)</li>
-</ul>
-  <!-- <ul>
-    <li>Worked on financial systems and integrations, including <strong>Sage Intacct</strong> (cloud accounting platform).</li>
-    <li>Developed backend logic and integrations using <strong>PHP</strong> (CLI controllers, API connectors) and implemented VAT and accounting workflows.</li>
-    <li>Built frontend components using <strong>Vue.js, jQuery, and Bootstrap</strong>.</li>
-    <li>Designed and integrated <strong>REST APIs</strong> and modular services using <strong>Slim Framework</strong>.</li>
-    <li>Containerized applications with <strong>Docker</strong> and implemented document management and secure file transfer solutions.</li>
-      <li>Implemented document management solutions and secure file transfer mechanisms (FTP, versioning, access control).</li>
-    <li>Collaborated in Agile teams and adapted quickly across multiple projects and technical stacks.</li>
-  </ul> -->
-</div>
-
-
-<!-- Essential -->
-<div class="experience">
-    <div class="d-flex justify-content-between">
-        <div>
-            <div class="job-title">
-                <i class="fab fa-php"></i>
-                Full Stack PHP Developer
-            </div>
-            <div class="company"><i class="fas fa-briefcase"></i> Essential Technologies – Bucharest</div>
-
-      <div class="tech-stack">
-        <small><strong>Stack:</strong> PHP (Laravel, Symfony, CodeIgniter), JavaScript, jQuery, MongoDB, Redis, MySQL, REST APIs, Linux, SVN</small>
-      </div>
+      <!-- LANGUAGES -->
+      <div class="aside-sec">
+        <div class="aside-label">Languages</div>
+        <div class="lang-item">
+          <span><i class="fas fa-flag" style="color:var(--accent);font-size:10px;margin-right:6px"></i>Romanian</span>
+          <span class="lang-level">Native</span>
         </div>
-        <div class="dates">Jul 2013 – Dec 2016</div>
-    </div>  
-
-    <span>Full stack developer delivering end-to-end web applications across finance, insurance, eCommerce, retail and HoReCa. From backend architecture and database design to frontend and Linux deployment.</span>
-<ul>
-        <li>Developed complex web applications using PHP, JavaScript and MongoDB, including authentication and access control mechanisms: ACL and SSO for enterprise and internal platforms</li>
-        <li>Built Single Page Applications (SPA) and dynamic interfaces using jQuery, AJAX and Bootstrap</li>
-        <li>Used MongoDB and Redis for data modeling, validation and processing in high-volume applications</li>
-        <li>Automated administrative modules including notifications, data validation, import/export, document management and REST API integration</li>
-        <li>Delivered end-to-end solutions covering backend, database design, frontend and deployment in Linux environments</li>
-</ul>
-    <!-- </ul>
-        <li>Developed complex web applications using <strong>PHP, JavaScript and MongoDB</strong>, including authentication and access control mechanisms (ACL, SSO) for enterprise and internal platforms.</li>
-        <li>Delivered software solutions across multiple industries: finance, insurance, eCommerce, retail, HoReCa, and internal platforms.</li>
-        <li>Built Single Page Applications (SPA) and dynamic interfaces using <strong>jQuery, AJAX, and Bootstrap</strong>.</li>
-        <li>Used <strong>MongoDB</strong> and <strong>Redis</strong> for data modeling, validation, and processing in high-volume (Big Data) applications.</li>
-        <li>Automated administrative modules and access control systems (ACL), including notifications, data validation, import/export, document management, and <strong>REST API</strong> integration.</li>
-        <li>Delivered end-to-end solutions, including backend, database design, frontend, and deployment in <strong>Linux environments</strong>.</li>
-
-    </ul> -->
-</div>
-
-</section>
-
-<section class="education-section">
-    <div class="mb-3">
-    <h2 class="section-title"><i class="fas fa-graduation-cap"></i>Education</h2>
-        <div class="education">
-            <div class="d-flex justify-content-between">
-                <div>
-                    <div class="company"><i class="fa fa-university" aria-hidden="true"></i> Academy of Economic Studies Bucharest</div>
-                    <div class="job-title"><i class="fas fa-graduation-cap"></i>Accounting & Information Systems</div>
-                </div>
-                <div class="dates">2009 - 2012</div>
-            </div>
-            <!-- <p>Proficient in databases, programming, MSSQL, MS Office, and international financial reporting. EQF Level: 6</p> -->
+        <div class="lang-item">
+          <span><i class="fas fa-flag" style="color:var(--accent);font-size:10px;margin-right:6px"></i>English</span>
+          <span class="lang-level">Professional</span>
         </div>
-    </div>
-</section>
+      </div>
 
-<section class="languages-section">
-    <div class="mb-3">
-    <h2 class="section-title"><i class="fas fa-language"></i>Languages</h2>
-    <p><i class="fa-solid fa-flag"></i> English – Professional proficiency <span style="float: right;"><i class="fa-solid fa-flag"></i> Romanian – Native language</span></p>
-    </div>
-</section>
+    </aside>
+  </div><!-- /body -->
+</div><!-- /page -->
 </body>
 </html>
