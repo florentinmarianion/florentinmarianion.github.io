@@ -26,8 +26,27 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   @media print {
-    body { background: white !important; padding: 0 !important; }
-    .page { box-shadow: none !important; border-radius: 0 !important; max-width: 100% !important; }
+    .main { padding: 10pt 20pt !important; }
+    .hero { padding: 10pt 20pt 6pt !important;}
+    .job:nth-child(3) { padding-top: 20pt !important; }
+    .job:nth-child(5) { padding-top: 20pt !important; padding-bottom: 410pt !important; }
+    @page {
+      size: A4;
+      margin: 10mm 3mm 10mm 3mm;
+    }
+
+    /* counter reset on first page */
+    @page :first { margin-top: 3mm; } */
+
+    /* page numbers via CSS counter */
+    @page {
+      @bottom-center {
+        content: counter(page) " / " counter(pages);
+        font-family: 'DM Mono', monospace;
+        font-size: 8pt;
+        color: #9ca3af;
+      }
+    }
   }
 
   body {
@@ -61,14 +80,19 @@
 
   .hero-name {
     font-family: var(--serif);
-    font-size: 38px;
+    font-size: 32px;
     line-height: 1.1;
     letter-spacing: -0.5px;
     color: var(--ink);
+    /* font-family: var(--serif);
+    font-size: 38px;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    color: var(--ink); */
   }
 
   .hero-title {
-    font-size: 13px;
+    font-size: 18px;
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
