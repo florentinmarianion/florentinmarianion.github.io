@@ -27,8 +27,8 @@
 
   @media print {
     .main { padding: 10pt 20pt !important; }
+    .aside { padding-top: 10pt !important; }
     .hero { padding: 10pt 20pt 6pt !important;}
-    .aside { padding-top: 10pt !important;}
     .job:nth-child(3) { padding-top: 20pt !important; }
     .job:nth-child(5) { padding-top: 20pt !important; padding-bottom: 410pt !important; }
     @page {
@@ -140,9 +140,9 @@
     text-align: right;
     padding-top: 4px;
   }
-
   .location-pill {
-    display: inline-flex;
+    display: flex;
+    margin-bottom: 10px;
     align-items: center;
     gap: 6px;
     font-size: 11.5px;
@@ -313,6 +313,83 @@
     color: var(--ink-3);
   }
 
+  /* ─── SELECTED PROJECTS ─── */
+  .proj-list {
+    margin-top: 16px;
+    border-top: 1px dashed var(--rule);
+    padding-top: 14px;
+  }
+
+  .proj-list-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 12px;
+  }
+
+  .proj {
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed var(--rule);
+  }
+
+  .proj:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .proj-row1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .proj-name {
+    font-weight: 600;
+    font-size: 12.5px;
+    color: var(--ink);
+  }
+
+  .proj-date {
+    font-size: 10.5px;
+    font-family: var(--mono);
+    color: var(--ink-3);
+    white-space: nowrap;
+  }
+
+  .proj-row2 {
+    margin-top: 2px;
+    font-size: 11.5px;
+    font-family: var(--mono);
+    color: var(--accent);
+  }
+
+  .proj-row2 .proj-location {
+    color: var(--ink-3);
+    font-family: var(--mono);
+    font-size: 11px;
+  }
+
+  .proj-stack {
+    margin-top: 4px;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink-3);
+    line-height: 1.5;
+  }
+
+  .proj-desc {
+    margin-top: 5px;
+    font-size: 12px;
+    color: var(--ink-3);
+    font-style: italic;
+    line-height: 1.55;
+  }
+
   /* ─── ANIMATIONS ─── */
   .hero, .sec, .aside-sec { animation: fadeUp .5s ease both; }
   .sec:nth-child(2) { animation-delay: .05s; }
@@ -354,18 +431,33 @@
           <i class="fas fa-phone"></i> (+40) 766-329-974
         </a>
         <a href="https://www.linkedin.com/in/florentinmarianion" target="_blank">
-          <i class="fab fa-linkedin"></i> /in/FlorentinMarianIon
+          <i class="fab fa-linkedin"></i> linkedin.com/in/FlorentinMarianIon
         </a>
         <a href="https://github.com/florentinmarianion">
             <i class="fab fa-github"></i> github.com/florentinmarianion
         </a>
       </div>
     </div>
+    
     <div class="hero-right">
-      <span class="location-pill">
+      <div class="location-pill">
         <i class="fas fa-map-marker-alt" style="color:var(--accent)"></i>
-        Romania · Remote EU
-      </span>
+        Caracal, Romania · EET (UTC+2)
+      </div>
+      <div class="location-pill">
+        <i class="fas fa-laptop-house" style="color:var(--accent)"></i>
+        <ul style="list-style:none;text-align: left;">
+          <li>· Remote</li><li>· Open to relocation</li>
+        </ul>
+      </div>
+      <div class="location-pill">
+        <i class="fas fa-clock" style="color:var(--accent)"></i>
+        Available full-time
+      </div>
+      <div class="location-pill">
+        <i class="fas fa-calendar-days" style="color:var(--accent)"></i>
+        Age: 36
+      </div>
     </div>
   </header>
 
@@ -379,7 +471,7 @@
       <div class="sec">
         <div class="sec-label">Professional Summary</div>
         <p class="summary">
-          Full Stack PHP Developer with 7+ years of hands-on experience in Laravel, Symfony, Angular and TypeScript. I build and maintain SaaS platforms and web applications for clients in finance, insurance, healthcare, automation and eCommerce — across product teams and independent consulting engagements. I care about clean code, solid API design and databases that don't fall apart under load. I work best in remote teams with a culture of trust and autonomy. Open to full-time remote roles in EU.
+          Full Stack PHP Developer with 10+ years of experience delivering web platforms across finance, insurance, eCommerce, HoReCa and public sector. Built and contributed to large-scale multi-tenant SaaS systems, enterprise Angular applications and REST/SOAP API integrations, including senior consulting engagements. Comfortable across the full stack: Laravel, Symfony, Angular, TypeScript, JavaScript, Vue.js, MySQL, PostgreSQL, MongoDB.
         </p>
       </div>
 
@@ -397,15 +489,71 @@
             </div>
             <div class="job-date">Aug 2018 – Present</div>
           </div>
-          <div class="job-desc">Independent consultant and full stack developer working with clients across finance, insurance, healthcare, eCommerce, tech and public sector. 
-            I work autonomously, covering the full development lifecycle from requirements analysis and implementation to testing and post-release support, following OOP/MVC best practices throughout.</div>
+          <div class="job-desc">Independent consultant and full stack developer working with clients across finance, insurance, healthcare, eCommerce and public sector. Full development lifecycle ownership — from requirements analysis and implementation to testing and post-release support — following OOP/MVC best practices throughout.</div>
           <ul>
-            <li>Built and delivered SaaS platforms and web applications end-to-end using <strong>PHP (Laravel, Symfony), Angular, TypeScript and Javascript(Vue.js, jQuery)</strong>.</li>
-            <li>Designed and integrated <strong>REST APIs</strong> and modular backend systems connecting <strong>MySQL, PostgreSQL and NoSQL</strong> databases with external platforms: ERP, CRM, third-party APIs and cloud services.</li>
-            <li>Refactored and modernized legacy PHP applications (10+ years old), improving performance, security and long-term maintainability</li>
-            <li>Managed full project lifecycle independently, collaborating remotely with QA, DevOps and client teams in Agile environments</li>
-            <li>Configured and managed development and production environments: Docker, Linux, Apache, Nginx, DNS routing and virtual hosts, CI/CD pipelines, and cloud infrastructure (AWS, Azure).</li>
+            <li>Built and delivered SaaS platforms and web applications end-to-end using <strong>PHP (Laravel, Symfony), Angular, TypeScript and JavaScript (Vue.js, jQuery)</strong>.</li>
+            <li>Designed and integrated <strong>REST and SOAP APIs</strong> connecting <strong>MySQL, PostgreSQL and NoSQL</strong> databases with ERP, CRM and third-party platforms.</li>
+            <li>Refactored and modernized legacy PHP applications (10+ years old), improving performance, security and maintainability.</li>
+            <li>Configured and managed environments: Docker, Linux, Apache, Nginx, DNS, CI/CD pipelines, AWS and Azure infrastructure.</li>
           </ul>
+
+          <!-- SELECTED PROJECTS -->
+          <div class="proj-list">
+            <div class="proj-list-label">Selected Projects</div>
+
+            <div class="proj">
+              <div class="proj-row1">
+                <span class="proj-name">Financial Data Automation Tool</span>
+                <span class="proj-date">Mar – Apr 2021</span>
+              </div>
+              <div class="proj-row2">
+                <i class="fas fa-building" style="font-size:10px;opacity:.6;margin-right:4px"></i>Green Tre Development
+                &nbsp;·&nbsp; <span class="proj-location">Remote</span>
+              </div>
+              <div class="proj-stack">PHP · MySQL · JavaScript · jQuery · Bootstrap · Excel automation</div>
+              <div class="proj-desc">PHP/MySQL application for automated download and population of financial data into Excel reports for an international audit, consulting and insurance investment firm.</div>
+            </div>
+
+            <div class="proj">
+              <div class="proj-row1">
+                <span class="proj-name">eCommerce & Billing Platform Optimization</span>
+                <span class="proj-date">Jul – Aug 2019</span>
+              </div>
+              <div class="proj-row2">
+                <i class="fas fa-building" style="font-size:10px;opacity:.6;margin-right:4px"></i>Rent A Brain
+                &nbsp;·&nbsp; <span class="proj-location">Remote</span>
+              </div>
+              <div class="proj-stack">PHP (Laravel, CodeIgniter) · Angular 2+ · TypeScript · Node.js · PostgreSQL · MySQL · REST · SOAP · AWS · Nginx · Apache</div>
+              <div class="proj-desc">Full stack optimization across eCommerce and billing systems: Angular 2+ UI redesign, backend refactoring, REST/SOAP API integration, AWS infrastructure and DNS/server configuration.</div>
+            </div>
+
+            <div class="proj">
+              <div class="proj-row1">
+                <span class="proj-name">Dental Clinics & Public Administration Platforms</span>
+                <span class="proj-date">Feb – May 2019</span>
+              </div>
+              <div class="proj-row2">
+                <i class="fas fa-building" style="font-size:10px;opacity:.6;margin-right:4px"></i>Smart Project Solutions
+                &nbsp;·&nbsp; <span class="proj-location">Remote</span>
+              </div>
+              <div class="proj-stack">PHP · Laravel · MySQL · REST APIs · Bootstrap · jQuery · Apache · cPanel</div>
+              <div class="proj-desc">Full stack development for dental clinics, salons and public administration — covering backend, REST API design, database modelling and frontend.</div>
+            </div>
+
+            <div class="proj">
+              <div class="proj-row1">
+                <span class="proj-name">Angular Onboarding / Offboarding Platform</span>
+                <span class="proj-date">Aug – Oct 2018</span>
+              </div>
+              <div class="proj-row2">
+                <i class="fas fa-building" style="font-size:10px;opacity:.6;margin-right:4px"></i>Luxoft Professional Romania
+                &nbsp;·&nbsp; <span class="proj-location">Bucharest</span>
+              </div>
+              <div class="proj-stack">Angular 2+ · TypeScript · Node.js · Nginx · Git</div>
+              <div class="proj-desc">Angular developer for an enterprise-grade onboarding/offboarding application within a structured international team environment.</div>
+            </div>
+
+          </div><!-- /proj-list -->
         </div>
 
         <!-- EASA -->
@@ -489,6 +637,7 @@
             <span class="badge b-back"><i class="fab fa-php"></i> PHP</span>
             <span class="badge b-back"><i class="fab fa-laravel"></i> Laravel</span>
             <span class="badge b-back"><i class="fa-brands fa-symfony"></i> Symfony</span>
+            <span class="badge b-back"><i class="fab fa-node-js"></i> Node.js</span>
           </div>
         </div>
 
@@ -502,17 +651,18 @@
         </div>
 
         <div class="skill-group" style="margin-top:14px">
-          <div class="skill-cat">Data &amp; APIs</div>
+          <div class="skill-cat">Data & APIs</div>
           <div class="badges">
             <span class="badge b-data"><i class="fas fa-network-wired"></i> REST APIs</span>
             <span class="badge b-data"><i class="fas fa-plug"></i> SOAP</span>
             <span class="badge b-data"><i class="fas fa-database"></i> MySQL</span>
             <span class="badge b-data"><i class="fas fa-database"></i> PostgreSQL</span>
+            <span class="badge b-data"><i class="fas fa-database"></i> MongoDB</span>
           </div>
         </div>
 
         <div class="skill-group" style="margin-top:14px">
-          <div class="skill-cat">DevOps &amp; Cloud</div>
+          <div class="skill-cat">DevOps & Cloud</div>
           <div class="badges">
             <span class="badge b-devop"><i class="fas fa-infinity"></i> CI/CD</span>
             <span class="badge b-devop"><i class="fab fa-aws"></i> AWS</span>
@@ -523,7 +673,7 @@
         </div>
 
         <div class="skill-group" style="margin-top:14px">
-          <div class="skill-cat">Systems &amp; Performance</div>
+          <div class="skill-cat">Systems & Performance</div>
           <div class="badges">
             <span class="badge b-sys"><i class="fas fa-memory"></i> Redis</span>
             <span class="badge b-sys"><i class="fas fa-gauge-high"></i> Scalable APIs</span>
@@ -547,8 +697,7 @@
         <div class="aside-label">Education</div>
         <div>
           <div class="edu-school">Academy of Economic Studies</div>
-          <div class="edu-degree">Accounting &amp; Information Systems</div>
-          <div style="font-size:11px;color:var(--ink-3);margin-top:1px">Bucharest</div>
+          <div class="edu-degree">Accounting & Information Systems · Bucharest</div>
           <div class="edu-dates">2009 – 2012 · EQF Level 6</div>
         </div>
       </div>
@@ -557,12 +706,12 @@
       <div class="aside-sec">
         <div class="aside-label">Languages</div>
         <div class="lang-item">
-          <span><i class="fas fa-flag" style="color:var(--accent);font-size:10px;margin-right:6px"></i>Romanian</span>
-          <span class="lang-level">Native</span>
-        </div>
-        <div class="lang-item">
           <span><i class="fas fa-flag" style="color:var(--accent);font-size:10px;margin-right:6px"></i>English</span>
           <span class="lang-level">Professional</span>
+        </div>
+        <div class="lang-item">
+          <span><i class="fas fa-flag" style="color:var(--accent);font-size:10px;margin-right:6px"></i>Romanian</span>
+          <span class="lang-level">Native</span>
         </div>
       </div>
 
